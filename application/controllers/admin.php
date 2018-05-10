@@ -18,6 +18,49 @@ class Admin extends MY_Controller{
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
+
+  public function dashboard(){
+
+     $this->load->model('articlesmodel');
+     $articles=$this->articlesmodel->articles_list();
+     $this->load->view('admin/dashboard',['articles' => $articles]);
+
+
+  }
+
+
+public function add_articles(){
+
+
+}
+
+
+
+public function edit_articles(){
+
+
+}
+
+public function delete_articles(){
+
+
+}
+
+
+public function __construct()
+    {
+        // call Grandpa's constructor
+        parent::__construct();
+        if(! $this->session->userdata('user_id')){
+            return redirect('login');
+        }    
+
+    }
+
+
+
+
+
 }
 
 /* End of file welcome.php */
