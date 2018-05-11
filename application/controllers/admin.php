@@ -32,6 +32,33 @@ class Admin extends MY_Controller{
 public function add_articles(){
 
 
+$this->load->helper('form');
+$this->load->view('admin/add_article');
+
+
+}
+public function store_articles(){
+  $this->load->library('form_validation');
+  if($this->form_validation->run('add_articles_rules')) {
+
+      $post=$this->input->post();
+
+      unset($post['submit']);
+      $this->load->model('articlesmodel');
+      if($this->articlesmodel->add_article($post)){
+
+echo "inserted success";
+
+}else {
+   "not inserted";
+}
+
+     }
+else {
+  $this->load->view('admin/add_article');
+}
+
+
 }
 
 
@@ -53,7 +80,7 @@ public function __construct()
         parent::__construct();
         if(! $this->session->userdata('user_id')){
             return redirect('login');
-        }    
+        }
 
     }
 
@@ -62,6 +89,3 @@ public function __construct()
 
 
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

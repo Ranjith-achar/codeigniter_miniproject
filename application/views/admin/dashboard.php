@@ -1,7 +1,11 @@
 <?php include 'admin_header.php';?>
 <div class="container">
-
-  <table class="table table-hover">
+<div class="row">
+   <div class ="col-lg-6 col-lg-offset-6">
+      <a href="#" class="btn btn-lg btn-primary pull-right">ADD ARTICLES</a>
+  </div>
+</div>
+<table class="table table-hover">
     <thead>
       <tr>
         <th>S.No</th>
@@ -20,8 +24,6 @@
         </td>
       </tr>
     <?php } ?>
-
-
     </tbody>
   </table>
 </div>

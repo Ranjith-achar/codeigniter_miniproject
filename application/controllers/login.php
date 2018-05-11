@@ -4,7 +4,7 @@ class Login extends MY_Controller{
 
 	public function __construct(){
 
-	        parent::__construct();
+	    parent::__construct();
 	  	$this->load->helper('url');
 	  	$this->load->model('loginmodel');
 	        $this->load->library('session');

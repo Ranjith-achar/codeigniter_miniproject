@@ -15,6 +15,16 @@ $query=$this->db
     return $query->result();
 }
 
+
+
+public function add_article($array){
+
+  return $this->db->insert('articles',$array);
+
+
+}
+
+
 }
 
 ?>
