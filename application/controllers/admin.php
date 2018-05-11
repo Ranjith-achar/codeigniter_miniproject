@@ -47,11 +47,18 @@ public function store_articles(){
       $this->load->model('articlesmodel');
       if($this->articlesmodel->add_article($post)){
 
-echo "inserted success";
+              $this->session->set_flashdata('feedback','articcles added succesfully');
+              $this->session->set_flashdata('feedback_class','alert-dismissible alert-danger');
+              $this->load->view('admin/dashboard');
 
 }else {
-   "not inserted";
+  $this->session->set_flashdata('feedback','articcles not added try again');
+  $this->session->set_flashdata('feedback_class','alert-dismissible alert-danger');
 }
+
+
+    return redirect('admin/dashboard');
+
 
      }
 else {
@@ -83,9 +90,5 @@ public function __construct()
         }
 
     }
-
-
-
-
 
 }

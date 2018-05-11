@@ -5,6 +5,24 @@
       <a href="#" class="btn btn-lg btn-primary pull-right">ADD ARTICLES</a>
   </div>
 </div>
+
+
+ <?php if($feed = $this->session->flashdata('feedback')):
+         $feedclass = $this->session->flashdata('feedback_class');
+   ?>
+<div class="container">
+<div class="row">
+  <div class="col-lg-6">
+    <div class="alert alert-dismissible <?= $feedclass; ?>">
+      <?= $feed; ?>
+    </div>
+</div>
+</div>
+</div>
+
+<?php endif; ?>
+
+
 <table class="table table-hover">
     <thead>
       <tr>
